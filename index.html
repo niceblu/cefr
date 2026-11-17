@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id"><head><base target="_top"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CEFR Placement Test</title>
+<meta name="description" content="Tes penempatan bahasa Inggris berbasis CEFR (A1–B2) untuk mahasiswa.">
+<meta name="theme-color" content="#2f5bea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232f5bea'/%3E%3Cpath d='M3 10l9-4.5L21 10l-9 4.5z' fill='%23fff'/%3E%3Cpath d='M7 12.5V16c0 1.2 2.2 2.4 5 2.4s5-1.2 5-2.4v-3.5' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5fb;--cd:#fff;--tx:#12203d;--mu:#5a6785;--bd:#dde4f2;--ac:#2f5bea;--au:#e9a824;--ok:#12a072;--no:#e0454b;--sh:0 12px 32px rgba(18,32,61,.09);--r:16px}
+[data-t=dark]{--bg:#0a1122;--cd:#121b31;--tx:#e8edf9;--mu:#93a0c2;--bd:#222f4f;--sh:0 12px 32px rgba(0,0,0,.45)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font:16px/1.65 Inter,system-ui,sans-serif;color:var(--tx);background:var(--bg);transition:background .4s,color .4s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--tx) 9%,transparent) 1px,transparent 0) 0 0/24px 24px,radial-gradient(600px 400px at 90% -5%,color-mix(in srgb,var(--ac) 22%,transparent),transparent),radial-gradient(500px 380px at -5% 105%,color-mix(in srgb,var(--au) 20%,transparent),transparent)}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;line-height:1.25;margin:0}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px clamp(12px,3vw,28px);background:color-mix(in srgb,var(--cd) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.logo{width:46px;height:46px;border-radius:14px;border:0;cursor:pointer;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--ac),#6a4df0);box-shadow:0 6px 16px color-mix(in srgb,var(--ac) 45%,transparent);transition:transform .25s;overflow:hidden;padding:0}
+.logo:active{transform:scale(.9) rotate(-6deg)}.logo img{width:100%;height:100%;object-fit:cover}.logo .i{width:26px;height:26px}
+.brand h1{font-size:clamp(1rem,2.4vw,1.35rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{color:var(--mu);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;align-items:center;gap:8px}
+.ib{width:40px;height:40px;border-radius:12px;border:1px solid var(--bd);background:var(--cd);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.ib:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-2px)}.ib:active .i{transform:rotate(180deg)}.ib .i{transition:transform .4s}
+.tg{position:relative;width:62px;height:34px;flex:none}.tg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;z-index:2}
+.tg span{position:absolute;inset:0;border-radius:20px;background:linear-gradient(90deg,#8fd0ff,#ffe38a);transition:.4s;display:flex;align-items:center;justify-content:space-between;padding:0 8px;color:#7a5a00}
+.tg span::after{content:"";position:absolute;left:3px;top:3px;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transition:.4s cubic-bezier(.6,-.3,.3,1.4)}
+.tg input:checked+span{background:linear-gradient(90deg,#1b2a55,#3b3f8f);color:#c8d3ff}.tg input:checked+span::after{transform:translateX(28px)}
+.tg input:focus-visible+span,.ib:focus-visible,.btn:focus-visible,.logo:focus-visible{outline:3px solid var(--au);outline-offset:2px}
+.tg .i{width:15px;height:15px}
+main{max-width:960px;margin:0 auto;padding:clamp(14px,3vw,28px)}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh);padding:clamp(16px,3vw,28px)}
+.clock{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;margin-bottom:18px;padding:14px 22px;position:relative;overflow:hidden}
+.clock::after{content:"";position:absolute;right:-30px;top:-40px;width:140px;height:140px;border-radius:50%;border:22px solid color-mix(in srgb,var(--au) 22%,transparent)}
+.tm{font:700 clamp(1.9rem,6vw,2.6rem)/1 'Source Serif 4',Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:.02em}.tm i{font-style:normal;font-size:.5em;color:var(--au);margin-left:4px}
+.dt{display:flex;flex-direction:column;gap:2px;color:var(--mu);font-size:.9rem;z-index:1}.dt b{color:var(--tx);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;z-index:1}.chip{padding:3px 11px;border-radius:99px;font-size:.78rem;background:color-mix(in srgb,var(--ac) 12%,transparent);color:var(--ac);font-weight:600}
+.view{animation:in .45s ease}@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.hero{display:grid;gap:22px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h2{font-size:clamp(1.6rem,4.5vw,2.5rem)}.hero p{color:var(--mu)}
+.lv{display:flex;gap:8px;margin:14px 0}.lv span{flex:1;text-align:center;padding:10px 0;border-radius:12px;font-weight:700;color:#fff}
+.lv span:nth-child(1){background:#16a37f}.lv span:nth-child(2){background:#2f8ae0}.lv span:nth-child(3){background:#6a4df0}.lv span:nth-child(4){background:#d9531e}
+form{display:grid;gap:12px}label{font-size:.85rem;font-weight:600;color:var(--mu);display:grid;gap:4px}
+input[type=text],input[type=number],input[type=password],input[type=color],select,textarea{width:100%;padding:11px 13px;border-radius:12px;border:1.5px solid var(--bd);background:var(--bg);transition:.2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 18%,transparent)}
+input[type=color]{padding:3px;height:44px}
+.btn{border:0;cursor:pointer;padding:12px 22px;border-radius:12px;font-weight:600;display:inline-flex;gap:8px;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--ac),#6a4df0);box-shadow:0 8px 18px color-mix(in srgb,var(--ac) 35%,transparent);transition:.2s}
+.btn:hover{transform:translateY(-2px)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn.g{background:var(--bg);color:var(--tx);border:1px solid var(--bd);box-shadow:none}.btn.r{background:var(--no);box-shadow:none}
+.bar{height:8px;border-radius:9px;background:var(--bd);overflow:hidden}.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--ac),var(--au));transition:width .5s}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.timer{display:flex;gap:7px;align-items:center;font-weight:700;padding:6px 14px;border-radius:99px;background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok);font-variant-numeric:tabular-nums}.timer.w{background:color-mix(in srgb,var(--no) 15%,transparent);color:var(--no);animation:pl 1s infinite}@keyframes pl{50%{opacity:.5}}
+.pas{margin:14px 0;padding:14px 18px;border-left:4px solid var(--au);border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--au) 10%,transparent);font-family:'Source Serif 4',Georgia,serif}
+.q{font-size:clamp(1.1rem,2.6vw,1.35rem);margin:12px 0 16px;font-family:'Source Serif 4',Georgia,serif;font-weight:600}
+.op{display:flex;gap:12px;align-items:center;width:100%;text-align:left;margin-bottom:10px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--bd);background:var(--bg);cursor:pointer;transition:.2s}
+.op:hover{border-color:var(--ac);transform:translateX(4px)}.op b{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--bd);flex:none;transition:.2s}
+.op.s{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 10%,transparent)}.op.s b{background:var(--ac);color:#fff;transform:scale(1.1)}
+.nv{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px;margin-top:18px}
+.nv button{height:38px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-weight:600;transition:.2s}.nv .d{background:color-mix(in srgb,var(--ok) 20%,transparent);border-color:var(--ok)}.nv .c{background:var(--ac);color:#fff;border-color:var(--ac)}
+.foot{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.ring{width:150px;height:150px;position:relative;flex:none}.ring svg{transform:rotate(-90deg)}.ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:700 2rem 'Source Serif 4',serif;line-height:1.1}.ring small{font:500 .8rem Inter;color:var(--mu)}
+.res{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.pl{font:700 clamp(2rem,7vw,3.2rem)/1.1 'Source Serif 4',serif;color:var(--ac)}
+.rw{display:grid;grid-template-columns:44px 1fr 56px;gap:10px;align-items:center;margin:9px 0}
+.fl{padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--au) 16%,transparent);margin-top:14px;font-size:.9rem}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(6,10,22,.6);backdrop-filter:blur(6px);display:grid;place-items:center;padding:14px;animation:in .25s}
+.md{width:min(380px,100%)}.adm{width:min(1000px,100%);max-height:94vh;overflow:auto;background:var(--cd);border-radius:var(--r);padding:clamp(14px,3vw,26px);border:1px solid var(--bd)}
+.tabs{display:flex;gap:6px;margin:14px 0;flex-wrap:wrap}.tabs button{padding:8px 16px;border-radius:99px;border:1px solid var(--bd);background:var(--bg);cursor:pointer;font-weight:600}.tabs .on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+details{border:1px solid var(--bd);border-radius:12px;margin-bottom:8px;padding:8px 12px;background:var(--bg)}summary{cursor:pointer;font-weight:600}details .g2{margin-top:10px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}th{color:var(--mu)}
+#ts{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:99;display:grid;gap:8px}#ts div{padding:10px 18px;border-radius:12px;background:var(--tx);color:var(--bg);box-shadow:var(--sh);animation:in .3s}
+@media(max-width:720px){.hero{grid-template-columns:1fr}.tools{gap:5px}.ib{width:36px;height:36px}.brand small{display:none}.clock{padding:12px 16px}}
+@media(max-width:430px){#bFs{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.top,.clock,.foot,#ts{display:none}body::before{display:none}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></symbol>
+<symbol id="fs" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></symbol>
+<symbol id="rf" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7L21 8M21 3v5h-5"/></symbol>
+<symbol id="rs" viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.6L3 8M3 3v5h5"/></symbol>
+<symbol id="ck" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="tm" viewBox="0 0 24 24"><path d="M10 2h4M12 14l3-3M12 22a8 8 0 100-16 8 8 0 000 16z"/></symbol>
+</defs></svg>
+
+<header class="top">
+ <div class="brand"><button class="logo" id="logo" aria-label="Logo"><svg class="i"><use href="#cap"/></svg></button>
+ <div style="min-width:0"><h1 id="ttl">CEFR Placement Test</h1><small id="ins"></small></div></div>
+ <div class="tools">
+  <label class="tg" title="Mode terang / gelap"><input type="checkbox" id="th" aria-label="Mode gelap"><span><svg class="i"><use href="#sun"/></svg><svg class="i"><use href="#moon"/></svg></span></label>
+  <button class="ib" id="bFs" title="Layar penuh" aria-label="Layar penuh"><svg class="i"><use href="#fs"/></svg></button>
+  <button class="ib" id="bRf" title="Muat ulang data" aria-label="Muat ulang"><svg class="i"><use href="#rf"/></svg></button>
+  <button class="ib" id="bRs" title="Reset tes" aria-label="Reset"><svg class="i"><use href="#rs"/></svg></button>
+ </div>
+</header>
+<main>
+ <section class="card clock" aria-label="Jam">
+  <svg class="i" style="width:34px;height:34px;color:var(--ac)"><use href="#ck"/></svg>
+  <div class="tm" id="tm">00:00:00</div>
+  <div class="dt"><b id="dy">–</b><span id="dd">–</span></div>
+  <div class="chips" id="ch"></div>
+ </section>
+ <div id="app"></div>
+</main>
+<div id="ts"></div>
+
+<script>
+const $=s=>document.querySelector(s),LV=['A1','A2','B1','B2'],L='ABCD';
+const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* Alamat API Google Apps Script (ganti bila Anda membuat deployment baru) */
+const API_URL='https://script.google.com/macros/s/AKfycbweooPpGkFl0I0WbWvGQTIrBgBJabR89cmQbvmp-srJKJLTFZjRjC2iUpK2Cxswvg8/exec';
+const rpc=(f,...a)=>window.google&&google.script&&google.script.run
+ ?new Promise((ok,no)=>google.script.run.withSuccessHandler(ok).withFailureHandler(x=>no(new Error(String(x&&x.message||x).replace('Error: ',''))))[f](...a))
+ :fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({fn:f,args:a})})
+   .then(r=>r.json()).then(j=>{if(!j.ok)throw new Error(j.error||'Terjadi kesalahan');return j.data})
+   .catch(x=>{throw new Error(x.message==='Failed to fetch'?'Tidak dapat terhubung ke server. Periksa koneksi internet.':x.message)});
+const toast=m=>{const d=document.createElement('div');d.textContent=m;$('#ts').append(d);setTimeout(()=>d.remove(),3600)};
+const ic=n=>`<svg class="i"><use href="#${n}"/></svg>`;
+const getPdf=async(fn,...a)=>{toast('Menyiapkan PDF…');try{const r=await rpc(fn,...a),by=atob(r.b64),u=new Uint8Array(by.length);for(let i=0;i<by.length;i++)u[i]=by.charCodeAt(i);const x=document.createElement('a');x.href=URL.createObjectURL(new Blob([u],{type:'application/pdf'}));x.download=r.name;x.click()}catch(er){toast(er.message)}};
+const DESC={A1:'Pemahaman dasar: kalimat sederhana dan kosakata sehari-hari.',A2:'Dasar kuat: topik akrab, kalimat sederhana dengan penghubung.','B1':'Mandiri: teks terhubung dan struktur umum lintas waktu.',B2:'Mahir menengah: teks jelas dengan struktur kompleks.'};
+let S={cfg:{},qs:[],ans:{},i:0,u:{},t0:0,left:0,tick:null,tulis:''};
+
+/* ---------- Tema & kontrol ---------- */
+const setT=d=>{document.documentElement.dataset.t=d?'dark':'light';$('#th').checked=d;try{localStorage.setItem('t',d?1:0)}catch(_){}};
+let sv=null;try{sv=localStorage.getItem('t')}catch(_){}
+setT(sv!==null?sv==='1':matchMedia('(prefers-color-scheme:dark)').matches);
+$('#th').onchange=x=>setT(x.target.checked);
+$('#bFs').onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}catch(_){toast('Layar penuh diblokir. Buka tautan web app langsung di tab baru.')}};
+$('#bRf').onclick=()=>{if(S.tick&&!confirm('Muat ulang data? Jawaban Anda tetap tersimpan.'))return;load(true)};
+$('#bRs').onclick=()=>{if(confirm('Reset tes? Semua jawaban dan waktu akan dihapus.')){stop();S.ans={};S.i=0;S.tulis='';home()}};
+
+/* ---------- Jam digital ---------- */
+function clock(){
+ const n=new Date(),p=x=>String(x).padStart(2,'0'),h=n.getHours();
+ $('#tm').innerHTML=`${p(h)}:${p(n.getMinutes())}:${p(n.getSeconds())}<i>${h<12?'AM':'PM'}</i>`;
+ $('#dy').textContent=n.toLocaleDateString('id-ID',{weekday:'long'});
+ $('#dd').textContent=n.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+ const y0=new Date(n.getFullYear(),0,0),doy=Math.floor((n-y0)/864e5),t=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())),dn=t.getUTCDay()||7;
+ t.setUTCDate(t.getUTCDate()+4-dn);const wk=Math.ceil(((t-Date.UTC(t.getUTCFullYear(),0,1))/864e5+1)/7);
+ const tz=Intl.DateTimeFormat().resolvedOptions().timeZone,off=-n.getTimezoneOffset()/60,
+ sal=h<4?'Dini hari':h<11?'Pagi':h<15?'Siang':h<18?'Sore':'Malam';
+ $('#ch').innerHTML=[`Minggu ke-${wk}`,`Hari ke-${doy}`,sal,`${tz} (UTC${off>=0?'+':''}${off})`,`Kuartal ${Math.floor(n.getMonth()/3)+1}`].map(x=>`<span class="chip">${e(x)}</span>`).join('');
+}
+clock();setInterval(clock,1000);
+
+/* ---------- Muat data ---------- */
+async function load(manual){
+ $('#app').innerHTML='<div class="card" style="text-align:center;color:var(--mu)">Memuat data tes…</div>';
+ try{const d=await rpc('getPublic');S.cfg=d.cfg;S.qs=d.qs;theme();manual&&toast('Data diperbarui');S.tick?show():home()}
+ catch(x){$('#app').innerHTML=`<div class="card">Gagal memuat: ${e(x.message)}<br><br><button class="btn" onclick="load()">Coba lagi</button></div>`}
+}
+function theme(){
+ const c=S.cfg;document.documentElement.style.setProperty('--ac',c.aksen||'#2f5bea');
+ $('#ttl').textContent=c.judul;$('#ins').textContent=c.institusi;document.title=c.judul;
+ if(c.logo)$('#logo').innerHTML=`<img src="${e(c.logo)}" alt="" onerror="this.remove()">`;
+}
+
+/* ---------- Beranda ---------- */
+function home(){
+ const c=S.cfg,open=c.dibuka==='ya';
+ $('#app').innerHTML=`<div class="card view hero"><div>
+ <h2>Ketahui level bahasa Inggris Anda</h2>
+ <p>${e(c.sambutan)}</p>
+ <div class="lv">${LV.map(l=>`<span>${l}</span>`).join('')}</div>
+ <p style="font-size:.9rem">${S.qs.length} soal pilihan ganda · ${e(c.durasi)} menit · hasil langsung muncul${c.tulisan==='ya'?' · ada tugas menulis opsional':''}.</p></div>
+ <form id="f">
+  <label>Nama lengkap<input type="text" name="nama" required autocomplete="name"></label>
+  <label>NIM<input type="text" name="nim" required inputmode="numeric"></label>
+  <label>Kelas<input type="text" name="kelas" required></label>
+  <button class="btn" ${open&&S.qs.length?'':'disabled'}>${ic('tm')} ${open?'Mulai tes':'Tes sedang ditutup'}</button>
+ </form></div>`;
+ $('#f').onsubmit=x=>{x.preventDefault();S.u=Object.fromEntries(new FormData(x.target));S.ans={};S.i=0;S.tulis='';S.t0=Date.now();S.left=(+c.durasi||40)*60;
+  clearInterval(S.tick);S.tick=setInterval(()=>{S.left--;tmr();if(S.left<=0){toast('Waktu habis. Jawaban dikirim otomatis.');finish()}},1000);show()};
+}
+function stop(){clearInterval(S.tick);S.tick=null}
+const tmr=()=>{const t=$('#tmr');if(!t)return;const m=Math.max(0,S.left);t.lastChild.textContent=`${String(m/60|0).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;t.classList.toggle('w',m<300)};
+
+/* ---------- Soal ---------- */
+function show(){
+ const q=S.qs[S.i],n=S.qs.length,done=Object.keys(S.ans).length;
+ $('#app').innerHTML=`<div class="card view">
+ <div class="hd"><b>Soal ${S.i+1} dari ${n} <span class="chip">${e(q.level)}</span></b><span class="timer" id="tmr">${ic('tm')}<span></span></span></div>
+ <div class="bar"><i style="width:${done/n*100}%"></i></div>
+ ${q.bacaan?`<div class="pas">${e(q.bacaan)}</div>`:''}
+ <div class="q">${e(q.q)}</div>
+ ${q.o.map((o,k)=>`<button class="op ${S.ans[q.no]===L[k]?'s':''}" data-k="${L[k]}"><b>${L[k]}</b><span>${e(o)}</span></button>`).join('')}
+ <div class="foot"><button class="btn g" id="pv" ${S.i?'':'disabled'}>Sebelumnya</button>
+ ${S.i<n-1?'<button class="btn" id="nx">Berikutnya</button>':`<button class="btn" id="fn">${S.cfg.tulisan==='ya'?'Lanjut':'Kirim jawaban'}</button>`}</div>
+ <div class="nv">${S.qs.map((x,k)=>`<button data-g="${k}" class="${k===S.i?'c':S.ans[x.no]?'d':''}">${k+1}</button>`).join('')}</div></div>`;
+ tmr();
+ document.querySelectorAll('.op').forEach(b=>b.onclick=()=>{S.ans[q.no]=b.dataset.k;show()});
+ document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{S.i=+b.dataset.g;show()});
+ $('#pv').onclick=()=>{S.i--;show()};
+ if($('#nx'))$('#nx').onclick=()=>{S.i++;show()};
+ if($('#fn'))$('#fn').onclick=()=>{const k=n-Object.keys(S.ans).length;if(k&&!confirm(`${k} soal belum dijawab. Lanjutkan?`))return;S.cfg.tulisan==='ya'?write():finish()};
+}
+function write(){
+ $('#app').innerHTML=`<div class="card view"><h2>Tugas menulis (opsional)</h2><p class="pas">${e(S.cfg.soalTulis)}</p>
+ <textarea id="tx" rows="9" placeholder="Tulis di sini…">${e(S.tulis)}</textarea><p id="wc" style="color:var(--mu)"></p>
+ <div class="foot"><button class="btn g" id="bk">Kembali ke soal</button><button class="btn" id="go">Kirim jawaban</button></div></div>`;
+ const u=()=>{S.tulis=$('#tx').value;const w=S.tulis.trim()?S.tulis.trim().split(/\s+/).length:0;$('#wc').textContent=`${w} kata (target 60–120)`};
+ $('#tx').oninput=u;u();$('#bk').onclick=show;$('#go').onclick=finish;
+}
+async function finish(){
+ const d={...S.u,jawab:S.ans,tulis:S.tulis,detik:Math.round((Date.now()-S.t0)/1000)};S.last=d;stop();
+ $('#app').innerHTML='<div class="card" style="text-align:center">Mengirim dan menilai jawaban…</div>';
+ try{result(await rpc('submit',d))}catch(x){toast(x.message);$('#app').innerHTML=`<div class="card">Pengiriman gagal: ${e(x.message)}<br><br><button class="btn" id="rt">Kirim ulang</button></div>`;$('#rt').onclick=finish}
+}
+function result(r){
+ const pct=r.skor/r.total,C=2*Math.PI*62;
+ $('#app').innerHTML=`<div class="card view"><div class="res">
+ <div class="ring"><svg width="150" height="150"><circle cx="75" cy="75" r="62" fill="none" stroke="var(--bd)" stroke-width="12"/><circle id="rg" cx="75" cy="75" r="62" fill="none" stroke="var(--ac)" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" style="transition:stroke-dashoffset 1.2s"/></svg><div>${r.skor}<small>dari ${r.total}</small></div></div>
+ <div style="flex:1;min-width:220px"><span style="color:var(--mu)">Penempatan Anda, ${e(S.u.nama)}</span><div class="pl">${e(r.place)}</div>
+ <p style="color:var(--mu);margin:4px 0">${e(DESC[r.place.slice(0,2)]||DESC.A1)}</p></div></div>
+ <div style="margin-top:18px">${LV.map(l=>{const ok=r.blok[l]>=Math.min(r.kkm,r.tot[l]);return`<div class="rw"><b>${l}</b><div class="bar"><i style="width:${r.blok[l]/(r.tot[l]||1)*100}%;${ok?'background:var(--ok)':''}"></i></div><span>${r.blok[l]}/${r.tot[l]}</span></div>`}).join('')}</div>
+ <p style="color:var(--mu);font-size:.85rem">Level tercapai bila benar minimal ${r.kkm} soal per blok, berurutan dari A1. Hasil ini bukan sertifikat CEFR resmi.</p>
+ ${r.flag?`<div class="fl">${e(r.flag)}</div>`:''}
+ <div class="foot"><span style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn g" onclick="print()">Cetak hasil</button><button class="btn g" id="pd">Unduh jawaban (PDF)</button></span><button class="btn" id="ag">Selesai</button></div></div>`;
+ $('#ag').onclick=()=>{S.ans={};S.i=0;home()};$('#pd').onclick=()=>getPdf('pdfSelf',S.last);setTimeout(()=>$('#rg').style.strokeDashoffset=C*(1-pct),80);
+}
+
+/* ---------- Admin (tersembunyi di balik logo: klik 5x cepat) ---------- */
+let kc=0,kt;
+$('#logo').onclick=()=>{clearTimeout(kt);if(++kc>=5){kc=0;pin()}else kt=setTimeout(()=>kc=0,2500)};
+function ov(h,cl){const o=document.createElement('div');o.className='ov';o.innerHTML=`<div class="${cl}">${h}</div>`;document.body.append(o);o.onclick=x=>{if(x.target===o&&cl==='md')o.remove()};return o}
+function pin(){
+ const o=ov(`<div class="card"><h3>Akses admin</h3><form id="pf" style="margin-top:12px"><input type="password" id="pp" placeholder="PIN" autofocus required><button class="btn">Masuk</button></form></div>`,'md');
+ o.querySelector('#pf').onsubmit=async x=>{x.preventDefault();const p=o.querySelector('#pp').value;try{await rpc('adminLogin',p);o.remove();admin(p)}catch(er){toast(er.message)}}
+}
+const CF=[['judul','Judul aplikasi'],['institusi','Nama institusi'],['logo','URL gambar logo (opsional)'],['sambutan','Teks sambutan'],['durasi','Durasi tes (menit)','number'],['kkm','Skor minimum per level (dari 10)','number'],['aksen','Warna aksen','color'],['dibuka','Tes dibuka?',['ya','tidak']],['tulisan','Aktifkan tugas menulis?',['ya','tidak']],['soalTulis','Soal menulis'],['pin','PIN admin','password']];
+async function admin(p){
+ let D;try{D=await rpc('adminData',p)}catch(er){return toast(er.message)}
+ const o=ov('','adm'),b=o.firstChild;let tab=0;
+ const draw=()=>{
+  b.innerHTML=`<div class="hd"><h2>Panel admin</h2><div><a class="btn g" href="${e(D.url)}" target="_blank" rel="noopener">Buka Google Sheet</a> <button class="btn g" id="x">Tutup</button></div></div>
+  <div class="tabs">${['Pengaturan','Soal','Hasil'].map((t,k)=>`<button class="${k===tab?'on':''}" data-k="${k}">${t}</button>`).join('')}</div><div id="pn"></div>`;
+  b.querySelector('#x').onclick=()=>o.remove();b.querySelectorAll('.tabs button').forEach(x=>x.onclick=()=>{keep();tab=+x.dataset.k;draw()});
+  [cfgP,qsP,resP][tab](b.querySelector('#pn'));
+ };
+ const keep=()=>{b.querySelectorAll('[data-c]').forEach(i=>D.cfg[i.dataset.c]=i.value);b.querySelectorAll('details[data-q]').forEach(d=>{const q=D.qs[+d.dataset.q];d.querySelectorAll('[data-f]').forEach(i=>{const f=i.dataset.f;f[0]==='o'?q.o[+f[1]]=i.value:q[f]=i.value})})};
+ function cfgP(el){
+  el.innerHTML=`<div class="g2">${CF.map(([k,l,t])=>`<label>${l}${Array.isArray(t)?`<select data-c="${k}">${t.map(v=>`<option ${D.cfg[k]===v?'selected':''}>${v}</option>`).join('')}</select>`:k==='sambutan'||k==='soalTulis'?`<textarea data-c="${k}" rows="3">${e(D.cfg[k])}</textarea>`:`<input type="${t||'text'}" data-c="${k}" value="${e(D.cfg[k])}">`}</label>`).join('')}</div>
+  <div class="foot"><span></span><button class="btn" id="sv">Simpan pengaturan</button></div>`;
+  el.querySelector('#sv').onclick=async()=>{keep();try{await rpc('adminSaveCfg',p,D.cfg);p=D.cfg.pin;S.cfg={...S.cfg,...D.cfg};delete S.cfg.pin;theme();toast('Pengaturan tersimpan')}catch(er){toast(er.message)}}
+ }
+ function qsP(el){
+  el.innerHTML=D.qs.map((q,i)=>`<details data-q="${i}"><summary>${i+1}. [${e(q.level)}] ${e(q.q.slice(0,70))}</summary><div class="g2">
+  <label>Level<select data-f="level">${LV.map(l=>`<option ${q.level===l?'selected':''}>${l}</option>`).join('')}</select></label>
+  <label>Kunci<select data-f="key">${[...L].map(l=>`<option ${q.key===l?'selected':''}>${l}</option>`).join('')}</select></label></div>
+  <label style="margin-top:10px">Teks bacaan (opsional)<textarea data-f="bacaan" rows="3">${e(q.bacaan)}</textarea></label>
+  <label style="margin-top:10px">Pertanyaan<textarea data-f="q" rows="2">${e(q.q)}</textarea></label>
+  <div class="g2" style="margin-top:10px">${q.o.map((x,k)=>`<label>Opsi ${L[k]}<input type="text" data-f="o${k}" value="${e(x)}"></label>`).join('')}</div>
+  <div class="foot"><span></span><button class="btn r" data-del="${i}">Hapus soal</button></div></details>`).join('')+
+  `<div class="foot"><button class="btn g" id="ad">Tambah soal</button><button class="btn" id="sv">Simpan semua soal</button></div>`;
+  el.querySelector('#ad').onclick=()=>{keep();D.qs.push({level:'A1',bacaan:'',q:'Soal baru',o:['','','',''],key:'A'});draw()};
+  el.querySelectorAll('[data-del]').forEach(x=>x.onclick=()=>{if(confirm('Hapus soal ini?')){keep();D.qs.splice(+x.dataset.del,1);draw()}});
+  el.querySelector('#sv').onclick=async()=>{keep();try{const n=await rpc('adminSaveQs',p,D.qs);toast(n+' soal tersimpan');load()}catch(er){toast(er.message)}}
+ }
+ function resP(el){
+  el.innerHTML=`<div class="foot" style="margin:0 0 10px"><b>${D.res.length} peserta</b><span><button class="btn g" id="cv">Unduh CSV</button> <button class="btn g" id="pa">Unduh semua (PDF)</button> <button class="btn r" id="cl">Hapus semua hasil</button></span></div>
+  <div class="tw"><table><tr><th>Waktu</th><th>Nama</th><th>NIM</th><th>Kelas</th><th>Skor</th><th>A1</th><th>A2</th><th>B1</th><th>B2</th><th>Level</th><th>PDF</th></tr>${D.res.map((r,i)=>`<tr>${[0,1,2,3,4,5,6,7,8,9].map(k=>`<td>${e(r[k])}</td>`).join('')}<td><button class="btn g" style="padding:4px 12px" data-p="${i}">Unduh</button></td></tr>`).join('')||'<tr><td colspan="11">Belum ada hasil.</td></tr>'}</table></div>`;
+  el.querySelector('#cv').onclick=()=>{const t='Waktu,Nama,NIM,Kelas,Skor,A1,A2,B1,B2,Level\n'+D.res.map(r=>r.slice(0,10).map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+t],{type:'text/csv'}));a.download='hasil-cefr.csv';a.click()};
+  el.querySelector('#pa').onclick=()=>D.res.length?getPdf('adminPdfAll',p):toast('Belum ada hasil.');
+  el.querySelectorAll('[data-p]').forEach(x=>x.onclick=()=>getPdf('adminPdf',p,D.res[+x.dataset.p]));
+  el.querySelector('#cl').onclick=async()=>{if(confirm('Hapus SEMUA hasil? Tidak dapat dibatalkan.')){try{await rpc('adminClearRes',p);D.res=[];draw()}catch(er){toast(er.message)}}}
+ }
+ draw();
+}
+load();
+</script></body></html>
