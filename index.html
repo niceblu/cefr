@@ -85,7 +85,7 @@ details{border:1px solid var(--bd);border-radius:12px;margin-bottom:8px;padding:
 <symbol id="rf" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7L21 8M21 3v5h-5"/></symbol>
 <symbol id="rs" viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.6L3 8M3 3v5h5"/></symbol>
 <symbol id="ck" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-<symbol id="tm" viewBox="0 0 24 24"><path d="M10 2h4M12 14l3-3M12 22a8 8 0 100-16 8 8 0 000 16z"/></symbol>
+<symbol id="hg" viewBox="0 0 24 24"><path d="M10 2h4M12 14l3-3M12 22a8 8 0 100-16 8 8 0 000 16z"/></symbol>
 </defs></svg>
 
 <header class="top">
@@ -172,7 +172,7 @@ function home(){
   <label>Nama lengkap<input type="text" name="nama" required autocomplete="name"></label>
   <label>NIM<input type="text" name="nim" required inputmode="numeric"></label>
   <label>Kelas<input type="text" name="kelas" required></label>
-  <button class="btn" ${open&&S.qs.length?'':'disabled'}>${ic('tm')} ${open?'Mulai tes':'Tes sedang ditutup'}</button>
+  <button class="btn" ${open&&S.qs.length?'':'disabled'}>${ic('hg')} ${open?'Mulai tes':'Tes sedang ditutup'}</button>
  </form></div>`;
  $('#f').onsubmit=x=>{x.preventDefault();S.u=Object.fromEntries(new FormData(x.target));S.ans={};S.i=0;S.tulis='';S.t0=Date.now();S.left=(+c.durasi||40)*60;
   clearInterval(S.tick);S.tick=setInterval(()=>{S.left--;tmr();if(S.left<=0){toast('Waktu habis. Jawaban dikirim otomatis.');finish()}},1000);show()};
@@ -184,7 +184,7 @@ const tmr=()=>{const t=$('#tmr');if(!t)return;const m=Math.max(0,S.left);t.lastC
 function show(){
  const q=S.qs[S.i],n=S.qs.length,done=Object.keys(S.ans).length;
  $('#app').innerHTML=`<div class="card view">
- <div class="hd"><b>Soal ${S.i+1} dari ${n} <span class="chip">${e(q.level)}</span></b><span class="timer" id="tmr">${ic('tm')}<span></span></span></div>
+ <div class="hd"><b>Soal ${S.i+1} dari ${n} <span class="chip">${e(q.level)}</span></b><span class="timer" id="tmr">${ic('hg')}<span></span></span></div>
  <div class="bar"><i style="width:${done/n*100}%"></i></div>
  ${q.bacaan?`<div class="pas">${e(q.bacaan)}</div>`:''}
  <div class="q">${e(q.q)}</div>
@@ -235,11 +235,13 @@ function pin(){
 const CF=[['judul','Judul aplikasi'],['institusi','Nama institusi'],['logo','URL gambar logo (opsional)'],['sambutan','Teks sambutan'],['durasi','Durasi tes (menit)','number'],['kkm','Skor minimum per level (dari 10)','number'],['aksen','Warna aksen','color'],['dibuka','Tes dibuka?',['ya','tidak']],['tulisan','Aktifkan tugas menulis?',['ya','tidak']],['soalTulis','Soal menulis'],['pin','PIN admin','password']];
 async function admin(p){
  let D;try{D=await rpc('adminData',p)}catch(er){return toast(er.message)}
- const o=ov('','adm'),b=o.firstChild;let tab=0;
+ const o=ov('','adm'),b=o.firstChild;let tab=0,auto=true,last=new Date().toLocaleTimeString('id-ID');
+ const rf=async q=>{try{const n=await rpc('adminData',p);D.res=n.res;last=new Date().toLocaleTimeString('id-ID');const l=b.querySelector('#lu');if(l)l.textContent='Diperbarui '+last;if(tab===2)resP(b.querySelector('#pn'));if(!q)toast('Hasil diperbarui')}catch(er){if(!q)toast(er.message)}};
+ const iv=setInterval(()=>{if(!o.isConnected)return clearInterval(iv);if(auto&&tab===2&&!document.hidden)rf(true)},20000);
  const draw=()=>{
-  b.innerHTML=`<div class="hd"><h2>Panel admin</h2><div><a class="btn g" href="${e(D.url)}" target="_blank" rel="noopener">Buka Google Sheet</a> <button class="btn g" id="x">Tutup</button></div></div>
+  b.innerHTML=`<div class="hd"><h2>Panel admin</h2><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span id="lu" style="color:var(--mu);font-size:.8rem">Diperbarui ${last}</span><label style="display:inline-flex;flex-direction:row;gap:6px;align-items:center;font-weight:500"><input type="checkbox" id="au" ${auto?'checked':''}>Auto 20 dtk</label><button class="btn g" id="rr">${ic('rf')} Muat ulang</button><a class="btn g" href="${e(D.url)}" target="_blank" rel="noopener">Buka Google Sheet</a> <button class="btn g" id="x">Tutup</button></div></div>
   <div class="tabs">${['Pengaturan','Soal','Hasil'].map((t,k)=>`<button class="${k===tab?'on':''}" data-k="${k}">${t}</button>`).join('')}</div><div id="pn"></div>`;
-  b.querySelector('#x').onclick=()=>o.remove();b.querySelectorAll('.tabs button').forEach(x=>x.onclick=()=>{keep();tab=+x.dataset.k;draw()});
+  b.querySelector('#x').onclick=()=>o.remove();b.querySelector('#rr').onclick=()=>rf();b.querySelector('#au').onchange=x=>auto=x.target.checked;b.querySelectorAll('.tabs button').forEach(x=>x.onclick=()=>{keep();tab=+x.dataset.k;draw()});
   [cfgP,qsP,resP][tab](b.querySelector('#pn'));
  };
  const keep=()=>{b.querySelectorAll('[data-c]').forEach(i=>D.cfg[i.dataset.c]=i.value);b.querySelectorAll('details[data-q]').forEach(d=>{const q=D.qs[+d.dataset.q];d.querySelectorAll('[data-f]').forEach(i=>{const f=i.dataset.f;f[0]==='o'?q.o[+f[1]]=i.value:q[f]=i.value})})};
